@@ -87,10 +87,10 @@ export function Footer() {
 
       <div className="white-bg">
         <div className="footer__funding">
-          <img src={fundingGmca} alt="Reform Radio Funding Greater Manchester Combined Authority" style={{ width: '10rem' }} />
-          <img src={fundingEu} alt="Reform Radio Funding EU European Social Fund" style={{ width: '10rem' }} />
-          <img src={fundingEsfa} alt="Reform Radio Funding Education & Skills Funding Agency" style={{ width: '10rem' }} />
-          <img src={fundingMcc} alt="Reform Radio Funding Manchester City Council" style={{ width: '10rem' }} />
+          <img src={fundingGmca} alt="Reform Radio Funding Greater Manchester Combined Authority" style={{ width: '8rem' }} />
+          <img src={fundingEu} alt="Reform Radio Funding EU European Social Fund" style={{ width: '8rem' }} />
+          <img src={fundingEsfa} alt="Reform Radio Funding Education & Skills Funding Agency" style={{ width: '8rem' }} />
+          <img src={fundingMcc} alt="Reform Radio Funding Manchester City Council" style={{ width: '8rem' }} />
         </div>
       </div>
     </footer>
