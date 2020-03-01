@@ -52,7 +52,9 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <AppStateProvider>
         <Header />
-        <div>{children}</div>
+        <main class="main">
+          {children}
+        </main>
         <Footer />
       </AppStateProvider>
     </div>

@@ -1,13 +1,18 @@
 import React from 'react'
-import Layout from '../components/Layout'
+import { Link } from 'gatsby'
 
-const NotFoundPage = () => (
-  <Layout>
-    <div>
-      <h1>NOT FOUND</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+import notFoundImage from '../img/off-air.png'
+
+function NotFoundPage() {
+  return (
+    <div className="not-found-page">
+      <h1>Sorry, we couldn't find that page!</h1>
+      <p>
+        Why not go <Link to="/" >home</Link>?
+      </p>
+      <img src={notFoundImage} alt="Page not found" />
     </div>
-  </Layout>
-)
+  )
+}
 
 export default NotFoundPage
