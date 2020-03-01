@@ -9,9 +9,9 @@ import logo from '../img/reform-radio-logo.png'
 
 export function Header() {
   return (
-    <header>
+    <header className="header">
       <Link to="/" className="header-logo" title="Logo">
-        <img src={logo} alt="Reform Radio" />
+        <img src={logo} alt="Reform Radio Logo" />
       </Link>
       <AudioPlayer />
       <MenuButton />

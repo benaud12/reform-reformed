@@ -1,115 +1,98 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
-import logo from '../img/logo.svg'
-import facebook from '../img/social/facebook.svg'
-import instagram from '../img/social/instagram.svg'
-import twitter from '../img/social/twitter.svg'
-import vimeo from '../img/social/vimeo.svg'
+import { NavLinks } from './NavLinks'
+import {
+  FacebookIcon,
+  TwitterIcon,
+  InstagramIcon,
+  SoundcloudIcon,
+  MixcloudIcon,
+} from './Icons'
 
-const Footer = class extends React.Component {
-  render() {
-    return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: '14em', height: '10em' }}
-          />
+import logo from '../img/reform-radio-logo-full.png'
+import fundingGmca from '../img/reform-funding-gmca.png'
+import fundingEu from '../img/reform-funding-eu.png'
+import fundingEsfa from '../img/reform-funding-esfa.png'
+import fundingMcc from '../img/reform-funding-mcc.png'
+
+export function Footer() {
+  return (
+    <footer className="footer">
+      <div className="dark-bg">
+        <NavLinks
+          className="footer__nav"
+          ariaLabel="Footer Site Navigation"
+        />
+
+        <img className="footer__logo" src={logo} alt="Reform Radio Logo" style={{ width: '10rem' }} />
+
+        <p>Join us on</p>
+        <ul className="footer__social-links-list">
+          <li>
+            <a
+              href="https://www.facebook.com/reformradio"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Link to Reform Radio's Facebook page (opens in new window)"
+            >
+              <FacebookIcon />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/ReformRadioMCR"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Link to Reform Radio's Twitter page (opens in new window)"
+            >
+              <TwitterIcon />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://instagram.com/reformradio"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Link to Reform Radio's Instagram page (opens in new window)"
+            >
+              <InstagramIcon />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://soundcloud.com/reformradiomanchester"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Link to Reform Radio's Soundcloud page (opens in new window)"
+            >
+              <SoundcloudIcon />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.mixcloud.com/reformradio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Link to Reform Radio's Mixcloud page (opens in new window)"
+            >
+              <MixcloudIcon />
+            </a>
+          </li>
+        </ul>
+
+        <p className="footer__copyright">
+          &copy; 2017 Reform Radio
+        </p>
+      </div>
+
+      <div className="white-bg">
+        <div className="footer__funding">
+          <img src={fundingGmca} alt="Reform Radio Funding Greater Manchester Combined Authority" style={{ width: '10rem' }} />
+          <img src={fundingEu} alt="Reform Radio Funding EU European Social Fund" style={{ width: '10rem' }} />
+          <img src={fundingEsfa} alt="Reform Radio Funding Education & Skills Funding Agency" style={{ width: '10rem' }} />
+          <img src={fundingMcc} alt="Reform Radio Funding Manchester City Council" style={{ width: '10rem' }} />
         </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
-            <div className="columns">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    )
-  }
+      </div>
+    </footer>
+  )
 }
-
-export default Footer
