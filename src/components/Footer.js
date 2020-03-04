@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { NavLinks } from './NavLinks'
 import {
@@ -15,13 +16,15 @@ import fundingEu from '../img/reform-funding-eu.png'
 import fundingEsfa from '../img/reform-funding-esfa.png'
 import fundingMcc from '../img/reform-funding-mcc.png'
 
-export function Footer() {
+export function Footer({ footerProps }) {
   return (
-    <footer className="footer">
+    <footer className="footer" {...footerProps}>
       <div className="dark-bg">
         <NavLinks
-          className="footer__nav"
-          ariaLabel="Footer Site Navigation"
+          navProps={{
+            className: 'footer__nav',
+            'aria-label': 'Footer Site Navigation',
+          }}
         />
 
         <img className="footer__logo" src={logo} alt="Reform Radio Logo" style={{ width: '10rem' }} />
@@ -95,4 +98,8 @@ export function Footer() {
       </div>
     </footer>
   )
+}
+
+Footer.propTypes = {
+  footerProps: PropTypes.object,
 }

@@ -2,12 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-export function NavLinks({ className, ariaLabel, onLinkClick }) {
+export function NavLinks({ navProps, onLinkClick }) {
   return (
-    <nav
-      className={className}
-      aria-label={ariaLabel}
-    >
+    <nav {...navProps}>
       <Link to="/" className="nav-link" onClick={onLinkClick} >
         Home
       </Link>
@@ -34,7 +31,6 @@ export function NavLinks({ className, ariaLabel, onLinkClick }) {
 }
 
 NavLinks.propTypes = {
-  className: PropTypes.string,
   onLinkClick: PropTypes.func,
-  ariaLabel: PropTypes.string.isRequired,
+  navProps: PropTypes.object,
 }

@@ -8,7 +8,7 @@ import { withPrefix } from 'gatsby'
 
 import './all.scss'
 
-const TemplateWrapper = ({ children }) => {
+const TemplateWrapper = ({ children, location }) => {
   const { title, description } = useSiteMetadata()
   return (
     <div>
@@ -51,8 +51,8 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <AppStateProvider>
-        <Header />
-        <main class="main">
+        <Header location={location} />
+        <main>
           {children}
         </main>
         <Footer />

@@ -1,13 +1,15 @@
 import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
 import * as c from 'classnames'
 
 import { AppStateContext } from '../contexts/AppState'
 
-export function MenuButton() {
+export function MenuButton({ id, navId }) {
   const { isMenuOpen, toggleMenu } = useContext(AppStateContext)
 
   return (
     <button
+      id={id}
       className={c('menu-button', { open: isMenuOpen })}
       onClick={() => toggleMenu()}
       onKeyDown={(e) => {
@@ -16,6 +18,9 @@ export function MenuButton() {
         }
       }}
       aria-label={`${isMenuOpen ? 'Close' : 'Open'} Main Navigation Menu`}
+      aria-haspopup="true"
+      aria-controls={navId}
+      {...(isMenuOpen ? { 'aria-expanded': 'true' } : {})}
     >
       <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
         <rect className="line line__top" x="15" y="25" width="70" height="10" rx="5" />
@@ -24,4 +29,9 @@ export function MenuButton() {
       </svg>
     </button>
   )
+}
+
+MenuButton.propTypes = {
+  id: PropTypes.string,
+  navId: PropTypes.string,
 }
