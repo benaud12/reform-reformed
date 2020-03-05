@@ -35,7 +35,7 @@ export function Header({ location }) {
     <header
       className={c(
         'header',
-        { 'with-bg': scrollPosition > 150 },
+        { 'with-bg': scrollPosition > 100 },
         { 'menu-open': isMenuOpen },
       )}
     >
@@ -43,7 +43,7 @@ export function Header({ location }) {
         <div
           className={c(
             'header__menu-bar--logo',
-            { homepage: isHomePage },
+            { 'is-homepage': isHomePage },
           )}
         >
           <Link to="/" title="Logo">
