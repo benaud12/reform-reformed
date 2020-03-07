@@ -18,28 +18,42 @@ const TemplateWrapper = ({ children, location }) => {
         <meta name="description" content={description} />
 
         <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href={`${withPrefix('/')}img/apple-touch-icon.png`}
+          rel="icon"
+          type="image/png"
+          href={`${withPrefix('/')}img/favicon.ico`}
+          sizes="16x16 32x32 62x62"
         />
         <link
           rel="icon"
           type="image/png"
-          href={`${withPrefix('/')}img/favicon-32x32.png`}
+          href={`${withPrefix('/')}img/favicon-16.png`}
+          sizes="16x16"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href={`${withPrefix('/')}img/favicon-32.png`}
           sizes="32x32"
         />
         <link
           rel="icon"
           type="image/png"
-          href={`${withPrefix('/')}img/favicon-16x16.png`}
-          sizes="16x16"
+          href={`${withPrefix('/')}img/favicon-48.png`}
+          sizes="48x48"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href={`${withPrefix('/')}img/favicon-62.png`}
+          sizes="62x62"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href={`${withPrefix('/')}img/favicon-192.png`}
+          sizes="192x192"
         />
 
-        <link
-          rel="mask-icon"
-          href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
-          color="#ff4400"
-        />
         <meta name="theme-color" content="#fff" />
 
         <meta property="og:type" content="business.business" />
