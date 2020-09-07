@@ -1,6 +1,6 @@
 @import "~bulma/sass/utilities/initial-variables";
 @import "~bulma";
-@import 'variables.scss';
+@import "variables.scss";
 
 //////////////
 /// Common ///
@@ -9,7 +9,6 @@ h1 {
   text-align: center;
   font-size: 3rem;
   font-weight: bold;
-  text-transform: uppercase;
   color: $white;
   z-index: 10;
 }
@@ -22,6 +21,40 @@ h1 {
   background-color: $white;
 }
 
+.title-container {
+  padding: 6rem 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+
+  @media (min-width: $tablet) {
+    padding: 12rem 0;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $brand-dark60;
+    z-index: 0;
+    content: "";
+  }
+}
+
+.is-flex-column {
+  flex-direction: column;
+}
+
+.is-flex-align-center {
+  align-items: center;
+}
+
+.is-flex-justified-center {
+  justify-content: center;
+}
 
 //////////////
 /// Header ///
@@ -34,9 +67,7 @@ h1 {
   left: 0;
   padding: 0.5rem 1rem;
   z-index: 110;
-  transition:
-    background-color 0.6s ease-in-out,
-    height 0.6s ease-in-out;
+  transition: background-color 0.6s ease-in-out, height 0.6s ease-in-out;
 
   &:hover,
   &.with-bg,
@@ -131,12 +162,8 @@ h1 {
 
     &.open svg {
       .line__top {
-        transform:
-          translate(0%, 20%)
-          rotate(45deg);
-        -webkit-transform:
-          translate(0%, 20%)
-          rotate(45deg);
+        transform: translate(0%, 20%) rotate(45deg);
+        -webkit-transform: translate(0%, 20%) rotate(45deg);
       }
 
       .line__middle {
@@ -145,12 +172,8 @@ h1 {
       }
 
       .line__bottom {
-        transform:
-          translate(0%, -20%)
-          rotate(-45deg);
-        -webkit-transform:
-          translate(0%, -20%)
-          rotate(-45deg);
+        transform: translate(0%, -20%) rotate(-45deg);
+        -webkit-transform: translate(0%, -20%) rotate(-45deg);
       }
     }
   }
@@ -181,7 +204,7 @@ h1 {
   }
 }
 
-@media (min-width: $screen-md-min) {
+@media (min-width: $tablet) {
   .header {
     height: 6rem;
   }
@@ -197,7 +220,6 @@ h1 {
     width: 5rem;
   }
 }
-
 
 ////////////////////
 /// Audio Player ///
@@ -231,13 +253,12 @@ h1 {
     padding-left: 0.3rem;
   }
 
-  @media (min-width: $screen-md-min) {
+  @media (min-width: $tablet) {
     width: 4rem;
     height: 4rem;
     font-size: 2rem;
   }
 }
-
 
 /////////////////
 /// Nav Links ///
@@ -255,7 +276,6 @@ h1 {
     }
   }
 }
-
 
 //////////////
 /// Footer ///
@@ -333,6 +353,36 @@ h1 {
   }
 }
 
+//////////////////////
+/// About Page ///
+//////////////////////
+.about-page-content-section {
+  position: relative;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $white90;
+    z-index: 0;
+    content: "";
+  }
+
+  p {
+    max-width: 38rem;
+  }
+}
+
+.about-page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 //////////////////////
 /// Not Found Page ///
@@ -361,13 +411,12 @@ h1 {
     max-width: 700px;
   }
 
-  @media (min-width: $screen-md-min) {
+  @media (min-width: $tablet) {
     img {
       width: 60%;
     }
   }
 }
-
 
 /////////////////
 /// Home Page ///
@@ -403,14 +452,14 @@ h1 {
 .homepage__heading--overlay {
   position: absolute;
   top: 0;
-  left:0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-color: $brand-dark60;
   z-index: 0;
 }
 
-@media (min-width: $screen-md-min) {
+@media (min-width: $tablet) {
   .homepage__heading {
     padding-top: 13rem;
 
@@ -444,12 +493,12 @@ h1 {
   position: relative;
   width: 100%;
   height: 300px;
-  max-width: $screen-md-min;
+  max-width: $tablet;
   border-top: solid 1px;
   border-bottom: solid 1px;
   overflow: hidden;
 
-  @media (min-width: $screen-md-min) {
+  @media (min-width: $tablet) {
     border: solid 1px;
     border-radius: 5px;
     box-shadow: $box-shadow;
@@ -515,7 +564,12 @@ h1 {
 
 .animate {
   animation: shimmer 4s infinite linear;
-  background: linear-gradient(to right, $brand-dark10 4%, $brand-dark20 25%, $brand-dark10 36%);
+  background: linear-gradient(
+    to right,
+    $brand-dark10 4%,
+    $brand-dark20 25%,
+    $brand-dark10 36%
+  );
   background-size: 1000px 100%;
 }
 

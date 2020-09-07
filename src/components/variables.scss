@@ -4,23 +4,24 @@
 $fontColor: #444;
 
 $brand-light: #91cdd2;
-$brand-primary: #2495B3;
+$brand-primary: #2495b3;
 $brand-dark: #0d2738;
 $brand-dark10: rgba(0, 0, 0, 0.1);
 $brand-dark20: rgba(0, 0, 0, 0.2);
 $brand-dark60: rgba(0, 0, 0, 0.6);
 
-$green: #72CC72;
-$red: #CC7272;
-$yellow: #FFF9E8;
+$green: #72cc72;
+$red: #cc7272;
+$yellow: #fff9e8;
 $white: #fff;
+$white90: rgba(255, 255, 255, 0.9);
 $orange: #fd9f28;
 
 $grey: #d4d4d4;
-$grey-light: #F9F9F9;
-$grey-dark: #99A2A5;
+$grey-light: #f9f9f9;
+$grey-dark: #99a2a5;
 
-$black: #20232A;
+$black: #20232a;
 
 $jager-orange: #dd5a12;
 $jager-dark-green: #193e0f;
@@ -33,6 +34,5 @@ $box-shadow: 0px 0px 10px 0 $grey-dark;
 // Utility //
 /////////////
 $screen-sm-max: 639px;
-$screen-md-min: 640px;
 $screen-lg-min: 960px;
 $screen-xlg-min: 1300px;
