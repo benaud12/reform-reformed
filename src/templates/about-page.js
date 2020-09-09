@@ -23,51 +23,41 @@ export const AboutPageTemplate = ({
         className="title-container"
         style={{ backgroundImage: `url(${titleBgImage})` }}
       >
-        <div className="title-container-overlay" />
-        <div className="container">
-          <h1 className="">{title}</h1>
-        </div>
+        <h1>{title}</h1>
       </div>
       <section
-        className="section about-page-content-section"
+        className="about-page-content-section"
         style={{ backgroundImage: `url(${contentBgImage})` }}
       >
-        <div className="container">
-          <PageContent
-            className="content has-text-centered about-page-content"
-            content={content}
-          />
-        </div>
+        <PageContent
+          className="flex flex-col items-center md:container text-center relative p-6"
+          content={content}
+        />
       </section>
-      <section className="section">
-        <div className="container has-text-centered">
-          <h2>{teamMembersTitle}</h2>
-          <ul className="columns is-centered is-multiline">
-            {teamMembers.map(({ name, role, image }, index) => (
-              <li
-                key={`about-team-member-${index}`}
-                className="column has-text-centered"
-              >
-                <div className="is-flex is-flex-column is-flex-align-center">
-                  <PreviewCompatibleImage
-                    imageInfo={{
-                      image: image,
-                      alt: `${name}, ${role} at Reform Radio`,
-                      style: {
-                        borderRadius: "50%",
-                        height: 128,
-                        width: 128,
-                      },
-                    }}
-                  />
-                  {name}
-                  <br />
-                  {role}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <section className="text-center p-8">
+        <h2>{teamMembersTitle}</h2>
+        <ul className="flex flex-wrap justify-center">
+          {teamMembers.map(({ name, role, image }, index) => (
+            <li key={`about-team-member-${index}`} className="text-center p-8">
+              <div className="w-40 h-40 mb-4">
+                <PreviewCompatibleImage
+                  imageInfo={{
+                    image: image,
+                    alt: `${name}, ${role} at Reform Radio`,
+                    style: {
+                      borderRadius: "50%",
+                      height: "100%",
+                      width: "100%",
+                    },
+                  }}
+                />
+              </div>
+              {name}
+              <br />
+              {role}
+            </li>
+          ))}
+        </ul>
       </section>
     </div>
   );
