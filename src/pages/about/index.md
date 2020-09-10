@@ -2,7 +2,7 @@
 templateKey: about-page
 title: About Us
 title-bg-image: /img/dog-reading-book.jpg
-teamMembersTitle: Our Team
+teamMembersTitle: OUR TEAM
 teamMembers:
   - image: /img/reform-radio-jemma.jpg
     name: Jemma
