@@ -1,16 +1,12 @@
-import React, { useState } from 'react'
-import { graphql } from 'gatsby'
-import PropTypes from 'prop-types'
-import * as c from 'classnames'
+import React, { useState } from "react";
+import { graphql } from "gatsby";
+import PropTypes from "prop-types";
+import * as c from "classnames";
 
-import fullLogo from '../img/reform-radio-logo-full.png'
+import fullLogo from "../img/reform-radio-logo-full.png";
 
-export function IndexPageTemplate({
-  description,
-  image,
-  mixcloud,
-}) {
-  const [isIframeLoaded, setIsIframeLoaded] = useState(false)
+export function IndexPageTemplate({ description, image, mixcloud }) {
+  const [isIframeLoaded, setIsIframeLoaded] = useState(false);
 
   return (
     <div className="homepage">
@@ -23,7 +19,11 @@ export function IndexPageTemplate({
         }}
       >
         <h1>
-          <img className="homepage__heading--logo" src={fullLogo} alt="Reform Radio" />
+          <img
+            className="homepage__heading--logo"
+            src={fullLogo}
+            alt="Reform Radio"
+          />
         </h1>
         <p>{description}</p>
 
@@ -33,10 +33,9 @@ export function IndexPageTemplate({
         <h2>{mixcloud.heading}</h2>
         <div className="homepage__mixcloud-wrapper">
           <div
-            className={c(
-              'homepage__mixcloud-loader',
-              { 'iframe-loaded': isIframeLoaded },
-            )}
+            className={c("homepage__mixcloud-loader", {
+              "iframe-loaded": isIframeLoaded,
+            })}
           >
             <div className="homepage__mixcloud-loader--header animate">
               <div className="homepage__mixcloud-loader--header-top" />
@@ -51,13 +50,13 @@ export function IndexPageTemplate({
             width="100%"
             height="300px"
             src={mixcloud.url}
-            frameborder="0"
+            frameBorder="0"
             onLoad={() => setIsIframeLoaded(true)}
           />
         </div>
       </section>
     </div>
-  )
+  );
 }
 
 IndexPageTemplate.propTypes = {
@@ -68,10 +67,10 @@ IndexPageTemplate.propTypes = {
     title: PropTypes.string,
     url: PropTypes.string,
   }),
-}
+};
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <IndexPageTemplate
@@ -79,8 +78,8 @@ const IndexPage = ({ data }) => {
       description={frontmatter.description}
       mixcloud={frontmatter.mixcloud}
     />
-  )
-}
+  );
+};
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
@@ -88,9 +87,9 @@ IndexPage.propTypes = {
       frontmatter: PropTypes.object,
     }),
   }),
-}
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
@@ -112,4 +111,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

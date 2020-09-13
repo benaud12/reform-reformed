@@ -112,6 +112,10 @@ h2 {
   }
 }
 
+.header__menu-bar--player {
+  width: 40%;
+}
+
 .header__menu-bar--menu-button {
   display: flex;
   justify-content: flex-end;
@@ -237,39 +241,22 @@ h2 {
 ////////////////////
 /// Audio Player ///
 ////////////////////
-.audio-player-button {
-  width: 3rem;
-  height: 3rem;
-  font-size: 1.5rem;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $white;
-  border: solid 1px $white;
-  padding: 0;
-  position: relative;
-  z-index: 110;
+.audio-player-now-playing {
+  max-width: 70%;
 
-  @media (hover: hover) {
-    &:hover {
-      background-color: $brand-primary;
-      cursor: pointer;
-    }
+  .radioco-nowPlaying {
+    white-space: nowrap;
+    position: relative;
+    animation: scrollText 12s infinite linear;
   }
+}
 
-  &:disabled {
-    cursor: not-allowed;
+@keyframes scrollText {
+  0% {
+    left: 100%;
   }
-
-  &.paused {
-    padding-left: 0.3rem;
-  }
-
-  @media (min-width: $tablet) {
-    width: 4rem;
-    height: 4rem;
-    font-size: 2rem;
+  100% {
+    left: -100%;
   }
 }
 
